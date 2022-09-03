@@ -57,7 +57,7 @@ function fetchFromApi(){
     console.log(val)
 }).catch((e) => console.log(e))
 
-
+}
 
 
     // getting player image by ID (will used to live game goalscores)
