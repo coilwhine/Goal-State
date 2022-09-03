@@ -18,26 +18,33 @@ section {
     margin-top: 30px;
 }
 
+button,
+a {
+    cursor: pointer;
+}
+
 /* section-header */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--dark-color);
-}
-
-.logo-wraper {
-    background-color: whitesmoke;
-}
-
-.nav-bar {
     padding: 10px 15px;
 }
 
+.logo-wraper {
+    width: 30px;
+    height: 30px;
+    background-color: whitesmoke;
+}
+
+.nav-bar {}
+
 .nav-link {
+    font-size: 1rem;
     text-decoration: none;
     color: white;
-    padding: 10px 0;
+    margin-left: 20px;
 }
 
 /* section-live-main */
@@ -51,7 +58,9 @@ header {
 
 .main-event-team {
     display: flex;
+    align-items: center;
     flex-direction: column;
+    justify-content: center;
     gap: 8px;
 }
 
@@ -62,8 +71,7 @@ header {
 .live-team-img {
     width: 200px;
     height: 140px;
-    padding: 5px;
-    background-color: var(--dark-color);
+    border: solid 2px var(--dark-color);
 }
 
 .main-event-score {
@@ -79,8 +87,9 @@ header {
 .scorers-imgs {
     display: flex;
     gap: 5px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    max-width: 140px;
 }
 
 .scorer-img {
@@ -88,6 +97,7 @@ header {
     height: 30px;
     width: 30px;
     border-radius: 50px;
+    flex-shrink: 0;
 }
 
 /* test */
