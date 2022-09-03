@@ -118,10 +118,3 @@ header {
     border-radius: 5px;
     background-color: var(--pink-color);
 }
-
-/* test */
-#home-scorer1 {
-    background: url(img/italy\ flag.png);
-    background-position: center;
-    background-size: contain;
-}
