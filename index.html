@@ -18,64 +18,75 @@
 
     <!-- Script -->
     <script src="script.js" defer></script>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"
+        defer></script>
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
 <body>
-<button onclick="fetchFromApi()">click to fetch</button>
     <header>
         <div class="logo-wraper"></div>
         <nav class="nav-bar">
-            <a href="#" class="nav-link">Contact Us</a>
-            <a href="#" class="nav-link">Live Now</a>
-            <a href="#" class="nav-link">Comming Soon</a>
+            <a href="#" class="nav-bar-link">Contact Us</a>
+            <a href="#" class="nav-bar-link">Live Now</a>
+            <a href="#" class="nav-bar-link">Comming Soon</a>
         </nav>
     </header>
 
-    <div class="all-wraper">
+    <section id="section-live-main-event">
+        <div class="all-wraper">
+            <div class="live-main-event-wraper">
+                <div id="main-event-home-team" class="main-event-team">
+                    <h2 class="main-event-heading">Israel</h2>
+                    <img id="home-team-img" class="live-team-img" src="img/israel fleg.png" alt="Home Team Flag">
+                    <p id="main-event-home-team-score" class="main-event-score">3</p>
+                    <div id="main-event-home-scorers-imgs" class="scorers-imgs">
+                        <div id="home-scorer1" class="scorer-img"></div>
+                        <div id="home-scorer2" class="scorer-img"></div>
+                        <div id="home-scorer3" class="scorer-img"></div>
+                    </div>
+                </div>
 
-        <section id="section-live-main-event">
-            <div id="main-event-home-team" class="main-event-team">
-                <h2 class="main-event-heading">Israel</h2>
-                <img class="live-team-img team-left-img" src="img/israel fleg.png" alt="Home Team Flag">
-                <p id="main-event-away-team-score" class="main-event-score">3</p>
-                <div id="main-event-home-scorers-imgs" class="scorers-imgs">
-                    <div id="home-scorer1" class="scorer-img"></div>
-                    <div id="home-scorer2" class="scorer-img"></div>
-                    <div id="home-scorer3" class="scorer-img"></div>
+                <p class="main-event-vs">vs</p>
+
+                <div id="main-event-away-team" class="main-event-team">
+                    <h2 class="main-event-heading">Italy</h2>
+                    <img id="away-team-img" class="live-team-img" src="img/italy flag.png" alt="Away Team Flag">
+                    <p id="main-event-away-team-score" class="main-event-score">2</p>
+                    <div id="main-event-away-scorers-imgs" class="scorers-imgs">
+                        <div id="away-scorer1" class="scorer-img"></div>
+                        <div id="away-scorer2" class="scorer-img"></div>
+                        <div id="away-scorer3" class="scorer-img"></div>
+                    </div>
                 </div>
             </div>
-
-            <p class="main-event-vs">vs</p>
-
-            <div id="main-event-away-team" class="main-event-team">
-                <h2 class="main-event-heading">Italy</h2>
-                <img class="live-team-img team-right-img" src="img/italy flag.png" alt="Away Team Flag">
-                <p id="main-event-home-team-score" class="main-event-score">2</p>
-                <div id="main-event-away-scorers-imgs" class="scorers-imgs">
-                    <div id="away-scorer1" class="scorer-img"></div>
-                    <div id="away-scorer2" class="scorer-img"></div>
-                    <div id="away-scorer3" class="scorer-img"></div>
-                </div>
+            <div class="main-event-statistic-btn-wraper">
+                <button id="main-event-statistic-btn" class="main-event-statistic-btn" type="button">Statistics<br><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                    </svg></button>
             </div>
+        </div>
+    </section>
 
-        </section>
+    <section id="section-live-events">
 
-        <section id="section-live-events">
+    </section>
 
-        </section>
+    <section id="section-coming-soon">
 
-        <section id="section-coming-soon">
+    </section>
 
-        </section>
 
-    </div>
 
     <footer>
-
+        <button onclick="fetchFromApi()">click to fetch</button>
     </footer>
 </body>
 
