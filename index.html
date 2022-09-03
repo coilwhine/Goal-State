@@ -18,7 +18,7 @@
 
     <!-- Script -->
     <script src="script.js" defer></script>
-    <!-- JavaScript Bundle with Popper -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"
         defer></script>
@@ -28,13 +28,12 @@
 </head>
 
 <body>
-    <button onclick="fetchFromApi()">click to fetch</button>
     <header>
         <div class="logo-wraper"></div>
         <nav class="nav-bar">
-            <a href="#" class="nav-link">Contact Us</a>
-            <a href="#" class="nav-link">Live Now</a>
-            <a href="#" class="nav-link">Comming Soon</a>
+            <a href="#" class="nav-bar-link">Contact Us</a>
+            <a href="#" class="nav-bar-link">Live Now</a>
+            <a href="#" class="nav-bar-link">Comming Soon</a>
         </nav>
     </header>
 
@@ -43,7 +42,7 @@
             <div class="live-main-event-wraper">
                 <div id="main-event-home-team" class="main-event-team">
                     <h2 class="main-event-heading">Israel</h2>
-                    <img class="live-team-img team-left-img" src="img/israel fleg.png" alt="Home Team Flag">
+                    <img id="home-team-img" class="live-team-img" src="img/israel fleg.png" alt="Home Team Flag">
                     <p id="main-event-home-team-score" class="main-event-score">3</p>
                     <div id="main-event-home-scorers-imgs" class="scorers-imgs">
                         <div id="home-scorer1" class="scorer-img"></div>
@@ -56,7 +55,7 @@
 
                 <div id="main-event-away-team" class="main-event-team">
                     <h2 class="main-event-heading">Italy</h2>
-                    <img class="live-team-img team-right-img" src="img/italy flag.png" alt="Away Team Flag">
+                    <img id="away-team-img" class="live-team-img" src="img/italy flag.png" alt="Away Team Flag">
                     <p id="main-event-away-team-score" class="main-event-score">2</p>
                     <div id="main-event-away-scorers-imgs" class="scorers-imgs">
                         <div id="away-scorer1" class="scorer-img"></div>
@@ -87,7 +86,7 @@
 
 
     <footer>
-
+        <button onclick="fetchFromApi()">click to fetch</button>
     </footer>
 </body>
 
