@@ -1,0 +1,108 @@
+:root {
+    --dark-color: #191919;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.all-wraper {
+    width: 70%;
+    max-width: 1080px;
+    margin: auto;
+}
+
+section {
+    margin-top: 30px;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+/* section-header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-color);
+    padding: 10px 15px;
+}
+
+.logo-wraper {
+    width: 30px;
+    height: 30px;
+    background-color: whitesmoke;
+}
+
+.nav-bar {}
+
+.nav-link {
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+
+/* section-live-main */
+
+#section-live-main-event {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.main-event-team {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.main-event-heading {
+    text-align: center;
+}
+
+.live-team-img {
+    width: 200px;
+    height: 140px;
+    border: solid 2px var(--dark-color);
+}
+
+.main-event-score {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.main-event-vs {
+    font-size: 5rem;
+}
+
+.scorers-imgs {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 140px;
+}
+
+.scorer-img {
+    border: solid 2px var(--dark-color);
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    flex-shrink: 0;
+}
+
+/* test */
+#home-scorer1 {
+    background: url(img/italy\ flag.png);
+    background-position: center;
+    background-size: contain;
+}

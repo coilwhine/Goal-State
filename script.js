@@ -1,5 +1,8 @@
 const apiKey = "ca6d66a0a93082ed6d39d08eac0f7e8b3df170738be465f6e4a356ce414b9838"
 
+// getting all live games 
+
+
 function fetchFromApi(){
 
     fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`)
@@ -20,6 +23,9 @@ function fetchFromApi(){
         document.body.append(img2)
     });
     
+    
+    
+    // getting all games in next 24 HOURS
     
     
     let date = new Date();
@@ -51,4 +57,15 @@ function fetchFromApi(){
     console.log(val)
 }).catch((e) => console.log(e))
 
+
+
+
+    // getting player image by ID (will used to live game goalscores)
+
+
+async function returnPic(id) {
+    const result = await fetch(`https://apiv2.allsportsapi.com/football/?&met=Players&playerId=${id}&APIkey=ca6d66a0a93082ed6d39d08eac0f7e8b3df170738be465f6e4a356ce414b9838`);
+    const playerInfo = await result.json();
+    let playerImage = playerInfo.result[0].player_image;
+    return playerImage;
 }
