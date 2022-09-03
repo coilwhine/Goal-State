@@ -1,0 +1,98 @@
+:root {
+    --dark-color: #191919
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.all-wraper {
+    width: 70%;
+    max-width: 1080px;
+    margin: auto;
+}
+
+section {
+    margin-top: 30px;
+}
+
+/* section-header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-color);
+}
+
+.logo-wraper {
+    background-color: whitesmoke;
+}
+
+.nav-bar {
+    padding: 10px 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 0;
+}
+
+/* section-live-main */
+
+#section-live-main-event {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.main-event-team {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.main-event-heading {
+    text-align: center;
+}
+
+.live-team-img {
+    width: 200px;
+    height: 140px;
+    padding: 5px;
+    background-color: var(--dark-color);
+}
+
+.main-event-score {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.main-event-vs {
+    font-size: 5rem;
+}
+
+.scorers-imgs {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.scorer-img {
+    border: solid 2px var(--dark-color);
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+}
+
+/* test */
+#home-scorer1 {
+    background: url(img/italy\ flag.png);
+    background-position: center;
+    background-size: contain;
+}
