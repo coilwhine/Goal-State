@@ -12,8 +12,8 @@
 }
 
 .all-wraper {
-    width: 70%;
-    max-width: 1080px;
+    width: 80%;
+    max-width: 1400px;
     margin: auto;
     padding: 30px 0;
 }
@@ -102,6 +102,8 @@ header {
     flex-shrink: 0;
 }
 
+    
+    
 .main-event-statistic-btn-wraper {
     display: flex;
     justify-content: center;
@@ -118,3 +120,62 @@ header {
     border-radius: 5px;
     background-color: var(--pink-color);
 }
+
+
+
+
+
+/* section-live-scores */
+
+
+
+.live-games-container{
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.live-game-1-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(141, 141, 141);
+    width: 280px;
+    margin: 15px 5px;
+}
+
+.teams-and-live-score{
+    display: flex;
+    margin: 6px;
+    width: 280px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.teams-and-live-score > img {
+    width: 20px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.team-VS-team{
+    margin-bottom: 0;
+    position: relative;
+    top: 10px;
+    font-size: 14px;
+    color: rgb(141, 141, 141);
+}
+
+.live-score{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    }
+    
+    
+    
