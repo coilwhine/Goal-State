@@ -90,6 +90,7 @@ header {
     background: url(img/israel\ fleg.png);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .main-event-score {

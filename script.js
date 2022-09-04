@@ -10,32 +10,17 @@ function fetchFromApi() {
         .then((val) => {
             console.log(val.result[0])
 
-
-            let img = document.createElement("img")
-            img.src = val.result[0].home_team_logo;
-            document.body.append(img)
-
-            let score = document.createElement("span")
-            score.innerText = val.result[0].event_final_result;
-            document.body.append(score)
-
-            let img2 = document.createElement("img")
-            img2.src = val.result[0].away_team_logo;
-            document.body.append(img2)
-
             let homeImg = document.querySelector("#home-team-img");
-            homeImg.src = val.result[0].home_team_logo;
-
+            homeImg.style.background = `url(${val.result[0].home_team_logo})`;
 
             let awayImg = document.querySelector("#away-team-img");
-            awayImg.src = val.result[0].away_team_logo;
+            awayImg.style.background = `url(${val.result[0].away_team_logo})`;
 
             score = val.result[0].event_final_result;
             let homeScore = score.charAt(0);
-            document.querySelector("#main-event-home-team-score").innerHTML = homeScore;
+            document.querySelector("#main-event-home-team-score").innerText = homeScore;
             let awayScore = score.charAt(2);
-            document.querySelector("#main-event-away-team-score").innerHTML = awayScore;
-
+            document.querySelector("#main-event-away-team-score").innerText = awayScore;
         });
 
 
@@ -86,7 +71,6 @@ async function returnPic(id) {
 }
 
 function fetchFromApiStatistics(index) {
-
     fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`)
         .then((res) => res.json())
         .then((val) => {
