@@ -13,7 +13,7 @@
 
 .all-wraper {
     width: 80%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: auto;
     padding: 30px 0;
 }
@@ -43,6 +43,11 @@ header {
     text-decoration: none;
     color: var(--yellow-color);
     margin-left: 20px;
+    transition: 180ms;
+}
+
+.nav-bar-link:hover {
+    color: var(--pink-color);
 }
 
 /* section-live-main-event */
@@ -55,6 +60,14 @@ header {
     align-items: center;
     justify-content: center;
     gap: 40px;
+}
+
+.main-event-card {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.1);
 }
 
 .main-event-team {
@@ -74,6 +87,9 @@ header {
     height: 200px;
     border: solid 2px var(--dark-color);
     border-radius: 5px;
+    background: url(img/israel\ fleg.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .main-event-score {
