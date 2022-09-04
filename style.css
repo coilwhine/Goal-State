@@ -71,7 +71,7 @@ header {
 
 .live-team-img {
     width: 200px;
-    height: 140px;
+    height: 200px;
     border: solid 2px var(--dark-color);
     border-radius: 5px;
 }

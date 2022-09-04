@@ -30,7 +30,7 @@ function fetchFromApi() {
             let awayImg = document.querySelector("#away-team-img");
             awayImg.src = val.result[0].away_team_logo;
 
-            let score = val.result[0].event_final_result;
+            score = val.result[0].event_final_result;
             let homeScore = score.charAt(0);
             document.querySelector("#main-event-home-team-score").innerHTML = homeScore;
             let awayScore = score.charAt(2);
