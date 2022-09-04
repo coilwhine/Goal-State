@@ -102,8 +102,6 @@ header {
     flex-shrink: 0;
 }
 
-    
-    
 .main-event-statistic-btn-wraper {
     display: flex;
     justify-content: center;
@@ -119,26 +117,20 @@ header {
     font-size: 1rem;
     border-radius: 5px;
     background-color: var(--pink-color);
+    line-height: 1.2;
 }
 
-
-
-
-
 /* section-live-scores */
-
-
-
-.live-games-container{
+.live-games-container {
     display: flex;
     justify-content: center;
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.live-game-1-box{
+.live-game-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,22 +140,7 @@ header {
     margin: 15px 5px;
 }
 
-.teams-and-live-score{
-    display: flex;
-    margin: 6px;
-    width: 280px;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.teams-and-live-score > img {
-    width: 20px;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-}
-
-.team-VS-team{
+.live-box-heading {
     margin-bottom: 0;
     position: relative;
     top: 10px;
@@ -171,11 +148,23 @@ header {
     color: rgb(141, 141, 141);
 }
 
-.live-score{
+.live-box-body-wraper {
+    display: flex;
+    margin: 6px;
+    width: 280px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.live-box-body-wraper img {
+    width: 20px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.live-box-score {
     display: flex;
     align-items: center;
     font-size: 22px;
-    }
-    
-    
-    
+}
