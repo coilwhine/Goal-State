@@ -5,29 +5,88 @@ const apiKey = "ca6d66a0a93082ed6d39d08eac0f7e8b3df170738be465f6e4a356ce414b9838
 
 function fetchFromApi() {
 
-    fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`)
+    fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&leagueId=202&APIkey=${apiKey}`)
         .then((res) => res.json())
         .then((val) => {
             console.log(val.result[0])
 
-            let homeImg = document.querySelector("#home-team-img");
-            homeImg.style.background = `url(${val.result[0].home_team_logo})`;
 
+            let homeTeamName = document.querySelector("#main-event-home-team-name");
+            homeTeamName.innerText = val.result[0].event_home_team;
+
+
+            let awayTeamName = document.querySelector("#main-event-away-team-name");
+            awayTeamName.innerText = val.result[0].event_away_team;
+
+
+
+
+            let homeImg = document.querySelector("#home-team-img");
+            // homeImg.classList.add("live-team-img")
+            homeImg.style.background = `url(${val.result[0].home_team_logo})`;
+            homeImg.style.backgroundRepeat = `no-repeat`;
+            homeImg.style.backgroundPosition = `center`;
+
+            
             let awayImg = document.querySelector("#away-team-img");
             awayImg.style.background = `url(${val.result[0].away_team_logo})`;
+            awayImg.style.backgroundRepeat = `no-repeat`;
+            awayImg.style.backgroundPosition = `center`;
+
 
             score = val.result[0].event_final_result;
             let homeScore = score.charAt(0);
             document.querySelector("#main-event-home-team-score").innerText = homeScore;
-            let awayScore = score.charAt(2);
+            let awayScore = score.charAt(4);
             document.querySelector("#main-event-away-team-score").innerText = awayScore;
-        });
+
+            console.log(val.result[0].goalscorers)
+
+            for(let i = 0; i < val.result[0].goalscorers.length; i++){
+                // if(!result[0].goalscorers) return ;
+
+                // console.log(val)
+                let goalScorerImgAwayTeam = document.createElement("img");
+                goalScorerImgAwayTeam.setAttribute("class" , "scorer-img");
+                goalScorerImgAwayTeam.setAttribute("id" , `away-scorer${i + 1}`);
+
+                
+                let goalscorerAwayPlayerID = val.result[0].goalscorers[i].away_scorer_id;
+                console.log(goalscorerAwayPlayerID)
+                returnPic(goalscorerAwayPlayerID).then((val) =>{
+                    goalScorerImgAwayTeam.src = val;
+                })
+                document.querySelector("#main-event-away-scorers-imgs").append(goalScorerImgAwayTeam);
+            }
+
+
+
+            // return live game minute time
+            function getLiveGameMinuteTime(){
+                let liveStatus = val.result[0].event_status;
+                console.log(liveStatus)
+                if(liveStatus == "Finished"){
+                    document.querySelector(".main-live-event-time").innerText = liveStatus;
+                    document.querySelector(".main-live-event-time").style.color = "red";
+                    document.querySelector(".timeLine").style.display = "none";
+                } else {
+                    document.querySelector(".main-live-event-time").innerText = liveStatus + "'"
+                }
+            }
+            getLiveGameMinuteTime();
+
+        }).catch((e) => console.log(e))
+
+    }
+
+
 
 
 
     // getting all games in next 24 HOURS
+function getAllNextGames(){
 
-
+    
     let date = new Date();
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
@@ -38,11 +97,11 @@ function fetchFromApi() {
     if (day < 10) {
         day = "0" + day;
     }
-
+    
     const startDateFrom = [year, month, day].join('-');
     console.log(startDateFrom); // 👉️ 2022-10-25
-
-
+    
+    
     let tomorrow = Number.parseFloat(day) + 1;
     if (tomorrow < 10) {
         tomorrow = "0" + tomorrow;
@@ -54,7 +113,7 @@ function fetchFromApi() {
     fetch(`https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=${startDateFrom}&to=${endDate}`)
         .then((res) => res.json())
         .then((val) => {
-            console.log(val)
+            console.log(val.result[0])
         }).catch((e) => console.log(e))
 
 }
@@ -69,6 +128,8 @@ async function returnPic(id) {
     let playerImage = playerInfo.result[0].player_image;
     return playerImage;
 }
+
+// console.log(returnPic(1506559850).then((val) => console.log(val)))
 
 function fetchFromApiStatistics(index) {
     fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`)
