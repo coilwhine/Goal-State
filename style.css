@@ -85,12 +85,12 @@ header {
 .live-team-img {
     width: 200px;
     height: 200px;
-    border: solid 2px var(--dark-color);
     border-radius: 5px;
     background: url(img/israel\ fleg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    object-fit: fill;
 }
 
 .main-event-score {
@@ -136,6 +136,54 @@ header {
     background-color: var(--pink-color);
     line-height: 1.2;
 }
+
+
+
+.timeLine {
+    width: 17px;
+    height: 2px;
+    transform: translate(-50%, -50%);
+}
+
+.timeLine::before {
+    content: "";
+    position: absolute;
+    bottom: 53px;
+    left: 9px;
+    width: 100%;
+    height: 100%;
+    background: green;
+    animation: animate 1.2s ease infinite ;
+}
+
+@keyframes animate {
+    0% {
+        width: 10%;
+    }
+    
+    50% {
+        width:100%;
+    }
+    
+    100% {
+        width: 10%;
+    }
+}
+.main-live-event-time-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.main-live-event-time{
+    color: green;
+    position:absolute;
+    margin-bottom: 130px;
+
+}
+
+
 
 /* section-live-scores */
 .live-games-container {
