@@ -1,15 +1,17 @@
-const apiKey = "ca6d66a0a93082ed6d39d08eac0f7e8b3df170738be465f6e4a356ce414b9838"
+// const apiKey = "ca6d66a0a93082ed6d39d08eac0f7e8b3df170738be465f6e4a356ce414b9838"
+const apiKey = "5aa9fcce24396558941310cd46d3a4499e45318738e277271468dd16c1e5e412"
 
 // getting all live games 
 
 
 function fetchFromApi() {
-
-    fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&leagueId=202&APIkey=${apiKey}`)
+// 
+    // fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&leagueId=202&APIkey=${apiKey}`)
+    fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`)
         .then((res) => res.json())
         .then((val) => {
             console.log(val.result[0])
-
+            gettingLiveGames();
 
             let homeTeamName = document.querySelector("#main-event-home-team-name");
             homeTeamName.innerText = val.result[0].event_home_team;
@@ -35,6 +37,7 @@ function fetchFromApi() {
 
 
             score = val.result[0].event_final_result;
+            console.log(score)
             let homeScore = score.charAt(0);
             document.querySelector("#main-event-home-team-score").innerText = homeScore;
             let awayScore = score.charAt(4);
@@ -71,14 +74,91 @@ function fetchFromApi() {
                     document.querySelector(".timeLine").style.display = "none";
                 } else {
                     document.querySelector(".main-live-event-time").innerText = liveStatus + "'"
+                    document.querySelector(".timeLine").style.display = "block";
                 }
+
             }
+
+                // return 6 live game elements
+
+
             getLiveGameMinuteTime();
+            // getAllNextGames();
 
         }).catch((e) => console.log(e))
 
     }
 
+
+
+    // return 6 live games
+    function gettingLiveGames(){
+         
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    if (month < 10) {
+        month = "0" + month
+    }
+    let day = date.getDate();
+    if (day < 10) {
+        day = "0" + day;
+    }
+    
+    const startDateFrom = [year, month, day].join('-');
+    console.log(startDateFrom); // 👉️ 2022-10-25
+    
+    
+    let tomorrow = Number.parseFloat(day) + 1;
+    if (tomorrow < 10) {
+        tomorrow = "0" + tomorrow;
+    }
+
+    const endDate = [year, month, tomorrow].join('-');
+    console.log(endDate); // 👉️ 2022-10-26
+        // fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`)
+        fetch(`https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=${startDateFrom}&to=${endDate}`)
+        .then((res) => res.json())
+        .then((val) => {
+            console.log(val)
+            for(let i = 0; i < 6; i++){
+            
+            
+                        let liveGameBox = document.createElement("div");
+                        liveGameBox.setAttribute("class", "live-game-box");
+                        
+                        let liveBoxHeading = document.createElement("p");
+                        liveBoxHeading.setAttribute("class", "live-box-heading");
+                        liveBoxHeading.innerText = val.result[i].event_home_team + "VS" + val.result[i].event_away_team; 
+                    
+                    let liveBoxWraper = document.createElement("div");
+                    liveBoxWraper.setAttribute("class", "live-box-body-wraper");
+                    
+                    let homeTeamLogo = document.createElement("img");
+                    homeTeamLogo.setAttribute("class", "home-team-logo");
+                    homeTeamLogo.src = val.result[i].home_team_logo
+                    
+                    let liveBoxScore = document.createElement("span");
+                    liveBoxScore.setAttribute("class", "live-box-score");
+                    liveBoxScore.innerText = val.result[i].event_final_result;
+                    console.log(val.result[i].event_final_result);
+                    
+                    let awayTeamLogo = document.createElement("img");
+                    awayTeamLogo.setAttribute("class", "away-team-logo");
+                    awayTeamLogo.src = val.result[i].away_team_logo
+                    
+                    liveBoxWraper.append(homeTeamLogo, liveBoxScore, awayTeamLogo)
+                    
+                    liveGameBox.append(liveBoxHeading, liveBoxWraper);
+                    
+                    let liveGame = document.querySelector(".live-games-container");
+                    
+                    liveGame.append(liveGameBox);
+                    
+                }
+            })
+            .catch((e) => console.log(e))
+    }
 
 
 
@@ -113,12 +193,48 @@ function getAllNextGames(){
     fetch(`https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=${startDateFrom}&to=${endDate}`)
         .then((res) => res.json())
         .then((val) => {
-            console.log(val.result[0])
-        }).catch((e) => console.log(e))
+            // for loop on i
+        //     for(let i = 0; i < 6; i++){
 
+                
+        //         let liveGameBox = document.createElement("div");
+        //         liveGameBox.setAttribute("class", "live-game-box");
+                
+        //     let liveBoxHeading = document.createElement("p");
+        //     liveBoxHeading.setAttribute("class", "live-box-heading");
+        //     liveBoxHeading.innerText = val.result[i].event_home_team + "VS" + val.result[i].event_away_team; 
+            
+        //     let liveBoxWraper = document.createElement("div");
+        //     liveBoxWraper.setAttribute("class", "live-box-body-wraper");
+            
+        //     let homeTeamLogo = document.createElement("img");
+        //     homeTeamLogo.setAttribute("class", "home-team-logo");
+        //     homeTeamLogo.src = val.result[i].home_team_logo
+            
+        //     let liveBoxScore = document.createElement("span");
+        //     liveBoxScore.setAttribute("class", "live-box-score");
+        //     liveBoxScore.innerText = val.result[i].event_final_result;
+        //     console.log(val.result[i].event_final_result);
+            
+        //     let awayTeamLogo = document.createElement("img");
+        //     awayTeamLogo.setAttribute("class", "away-team-logo");
+        //     awayTeamLogo.src = val.result[i].away_team_logo
+            
+        //     liveBoxWraper.append(homeTeamLogo, liveBoxScore, awayTeamLogo)
+            
+        //     liveGameBox.append(liveBoxHeading, liveBoxWraper);
+            
+        //     let liveGame = document.querySelector(".live-games-container");
+            
+        //     liveGame.append(liveGameBox);
+            
+        // }
+            // console.log(val.result[i])
+        }).catch((e) => console.log(e))
+        
 }
 
-
+// getAllNextGames();
 // getting player image by ID (will used to live game goalscores)
 
 
