@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="main-event-statistic-btn-wraper">
-                    <button id="main-event-statistic-btn" class="main-event-statistic-btn"
+                    <button id="main-event-statistic-btn" class="main-event-statistic-btn" data-bs-toggle="modal" data-bs-target="#statistic-main-live-event"
                         type="button">Statistics<br><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                             <path
@@ -100,7 +100,74 @@
 
     </section>
 
+    <section id="popup-statistic-main-live-event ">
+            <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#statistic-main-live-event">
+            Launch static backdrop modal
+        </button> -->
 
+        <!--Button in div  class "main-event-statistic-btn-wraper"  -->
+        
+        <!-- Modal -->
+        <div class="modal fade" id="statistic-main-live-event" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Statistics</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-around row">
+                        <div class="d-flex col justify-content-around">
+                            <h3 class="text-center">Home</h3>
+                            <h3 class="text-center"></h3>
+                            <h3 class="text-center">Away</h3>
+                        </div>
+                        <div class="d-flex row text-center  mt-3">
+                            <div class="d-flex justify-content-around">
+                                <p>1</p>
+                                <p class="text-secondary"> Goals</p>
+                                <p>0</p>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <p>3</p>
+                                <p class="text-secondary"> Attacks</p>
+                                <p>4</p>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <p>2</p>
+                                <p class="text-secondary"> Dangerous</p>
+                                <p>1</p>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <p>1</p>
+                                <p class="text-secondary">  On Target</p>
+                                <p>0</p>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <p>3</p>
+                                <p class="text-secondary"> Off Target</p>
+                                <p>1</p>
+                            </div>
+                        </div>
+                        <!-- <div class="d-flex row">
+                            <h3 class="text-center">Away</h3>
+                            <p> Goals:</p> 
+                            <p> Attacks:</p> 
+                            <p> Dangerous Attacks:</p> 
+                            <p> On Target:</p> 
+                            <p> Off Target:</p> 
+                        </div> -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <button onclick="fetchFromApi()">click to fetch</button>

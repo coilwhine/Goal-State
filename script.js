@@ -1,11 +1,11 @@
 // const apiKey = "ca6d66a0a93082ed6d39d08eac0f7e8b3df170738be465f6e4a356ce414b9838"
 const apiKey = "5aa9fcce24396558941310cd46d3a4499e45318738e277271468dd16c1e5e412"
 
-// getting all live games 
+// getting main live games 
 
 
 function fetchFromApi() {
-// 
+
     // fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&leagueId=202&APIkey=${apiKey}`)
     fetch(`https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${apiKey}`)
         .then((res) => res.json())
@@ -193,43 +193,7 @@ function getAllNextGames(){
     fetch(`https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=${apiKey}&from=${startDateFrom}&to=${endDate}`)
         .then((res) => res.json())
         .then((val) => {
-            // for loop on i
-        //     for(let i = 0; i < 6; i++){
 
-                
-        //         let liveGameBox = document.createElement("div");
-        //         liveGameBox.setAttribute("class", "live-game-box");
-                
-        //     let liveBoxHeading = document.createElement("p");
-        //     liveBoxHeading.setAttribute("class", "live-box-heading");
-        //     liveBoxHeading.innerText = val.result[i].event_home_team + "VS" + val.result[i].event_away_team; 
-            
-        //     let liveBoxWraper = document.createElement("div");
-        //     liveBoxWraper.setAttribute("class", "live-box-body-wraper");
-            
-        //     let homeTeamLogo = document.createElement("img");
-        //     homeTeamLogo.setAttribute("class", "home-team-logo");
-        //     homeTeamLogo.src = val.result[i].home_team_logo
-            
-        //     let liveBoxScore = document.createElement("span");
-        //     liveBoxScore.setAttribute("class", "live-box-score");
-        //     liveBoxScore.innerText = val.result[i].event_final_result;
-        //     console.log(val.result[i].event_final_result);
-            
-        //     let awayTeamLogo = document.createElement("img");
-        //     awayTeamLogo.setAttribute("class", "away-team-logo");
-        //     awayTeamLogo.src = val.result[i].away_team_logo
-            
-        //     liveBoxWraper.append(homeTeamLogo, liveBoxScore, awayTeamLogo)
-            
-        //     liveGameBox.append(liveBoxHeading, liveBoxWraper);
-            
-        //     let liveGame = document.querySelector(".live-games-container");
-            
-        //     liveGame.append(liveGameBox);
-            
-        // }
-            // console.log(val.result[i])
         }).catch((e) => console.log(e))
         
 }
@@ -271,3 +235,4 @@ function fetchFromApiStatistics(index) {
             const awaySaves = val.result[index].statistics[16].away;
         })
 }
+
